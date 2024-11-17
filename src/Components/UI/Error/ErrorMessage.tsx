@@ -1,3 +1,5 @@
+import { memo } from "react"
+
 interface Iprops{
   msg:string
 }
@@ -6,4 +8,4 @@ const ErrorMessage= ({msg}:Iprops) => {
 
 }
 
-export default ErrorMessage
+export default memo(ErrorMessage)

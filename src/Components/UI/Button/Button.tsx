@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { memo, ReactNode } from "react"
 
 interface Iprops{
     children:ReactNode,
@@ -14,4 +14,4 @@ const Button= ({children,className,width="w-full",onClick,...reset}:Iprops) => {
   )
 }
 
-export default Button
+export default memo(Button)

@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react"
+import { HTMLAttributes, memo } from "react"
 
 interface Iprops extends HTMLAttributes<HTMLSpanElement>{
     color:string,
@@ -12,4 +12,4 @@ const CircleColor= ({color,...reset}:Iprops) => {
   )
 }
 
-export default CircleColor
+export default memo(CircleColor)

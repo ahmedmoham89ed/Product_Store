@@ -46,15 +46,15 @@ function App() {
     const [errors,seterrors]=useState({title:"",description:"",imageURL:"",price:"",});
     const closeModal=()=>setIsOpen(false);
     const openModal=()=> setIsOpen(true);
-    const closeModalEditModal=()=>setIsOpenEditModal(false);
-    const openModalEditModal=()=> setIsOpenEditModal(true);
+    const closeModalEditModal=()=>useCallback(()=>{setIsOpenEditModal(false)},[]);
+    const openModalEditModal=()=> useCallback(()=>{setIsOpenEditModal(true)},[]);
     const [prods,setproducts]=useState<IProduct[]>(productList);
     const [selectedCategory,setselectedCategory]=useState(categories[0]);
     const [producttoedit,setproducttoedit]=useState<IProduct>(defaultProduct);
     const [producttoeditIndex,setproducttoeditIndex]=useState<number>(0);
     const closeRemoveModal = useCallback(()=> setIsRemoveModalOpen(false),[]);
     const openRemoveModal = useCallback(()=>  setIsRemoveModalOpen(true),[]);
-    const onCancelRemove = () => {closeRemoveModal()};
+    const onCancelRemove = useCallback(()=>{() => {closeRemoveModal()}},[]);
     const [isRemoveModalOpen, setIsRemoveModalOpen] = useState(false);
 
     const renderproductList=prods.map((product,index)=>

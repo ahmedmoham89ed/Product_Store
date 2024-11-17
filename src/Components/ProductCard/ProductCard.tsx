@@ -4,6 +4,7 @@ import Button from "../UI/Button/Button";
 import { IProduct } from "../Interface/Interface";
 import { txtSlicer } from "../Utils/Function";
 import CircleColor from "../UI/CircleColor/CircleColor";
+import { memo } from "react";
 
 interface Iprops{
    product:IProduct;
@@ -50,5 +51,5 @@ const ProductCard= ({product,setproducttoedit,openModalEditModal,setproducttoedi
 }
 
 
-export default ProductCard
+export default memo(ProductCard)
 
